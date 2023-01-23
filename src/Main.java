@@ -23,7 +23,7 @@ public class Main {
 
         //2 Получить список фамилий призывников (т.е. мужчин от 18 и до 27 лет).
         List<String> listConscript = personCollection.stream()
-                .filter(x -> (x.getAge() >= 18) && (x.getAge() <= 27))
+                .filter(x -> (x.getAge() >= 18 && x.getAge() <= 27 && x.getSex() == Sex.MAN))
                 .map(Person::getFamily)
                 .collect(Collectors.toList());
         System.out.println("Список фамилий призывников:");
